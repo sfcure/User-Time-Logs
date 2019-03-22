@@ -44,7 +44,7 @@ public class UserTimeLoggerServiceController {
         Id userId = UserInfo.getUserId();
     	// Check for the old time entry where logout time was not populate and settle that time entry
         User_Time_Log__c timeLog;
-        for(User_Time_Log__c utl : [SELECT Id FROM User_Time_Log__c WHERE Active_Session__c != NULL AND User__c =:userId ORDER BY LastModifiedDate DESC LIMIT 1]){
+        for(User_Time_Log__c utl : [SELECT Id, Active_Session__c FROM User_Time_Log__c WHERE Active_Session__c != NULL AND User__c =:userId ORDER BY LastModifiedDate DESC LIMIT 1]){
             if( utl.Active_Session__c == UserInfo.getSessionId() ) {
                 utl.Logout_Time__c = System.now();
             	timeLog = utl;

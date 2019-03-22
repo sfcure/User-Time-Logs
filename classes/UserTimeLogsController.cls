@@ -9,11 +9,6 @@ public class UserTimeLogsController {
         for(AggregateResult ar : [SELECT sum(Session_Duration_In_Minutes__c), User__c, Day__c FROM User_Time_Log__c WHERE Day__c = LAST_N_DAYS:30 GROUP BY User__c, Day__c ]){
         	lstUserTimeLogs.add( new UserTimeLog(ar, mapUsers) );	    
         }
-        
-        lstUserTimeLogs.add(new UserTimeLog('Mark Taylor', System.today(), '3 Hours and 34 Minutes'));
-        lstUserTimeLogs.add(new UserTimeLog('Pritam Shekhawat', System.today(), '5 Hours and 14 Minutes'));
-        lstUserTimeLogs.add(new UserTimeLog('Hugo Hill', System.today(), '6 Hours and 41 Minutes'));
-        lstUserTimeLogs.add(new UserTimeLog('Kris Lee', System.today(), '1 Hour and 20 Minutes'));
         return lstUserTimeLogs;
     }
     
@@ -45,11 +40,6 @@ public class UserTimeLogsController {
             else {
             	this.loginHours = min + ' Minutes';    
             }
-        }
-        public UserTimeLog(String userName, Date loginDate, String loginHours ){
-        	this.userName =	userName;
-            this.loginDate = loginDate;
-            this.loginHours = loginHours;
         }
     }
 }
