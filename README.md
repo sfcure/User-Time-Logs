@@ -6,8 +6,8 @@
 
 # Unmanaged Package Link
 
-[Sandbox Org](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0o00000310UO)
-[Dev/Production Org](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0o00000310UO)
+- [Sandbox Org](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0o00000310UO)
+- [Dev/Production Org](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0o00000310UO)
 
 
 # How To Configure
